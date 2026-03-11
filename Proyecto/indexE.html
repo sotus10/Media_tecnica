@@ -22,9 +22,65 @@
                     <input type="text" id="nameInput" placeholder="Escribe tu nombre">
                 </div>
                 <button class="btn" id="greetBtn">Saludar</button>
-            </section>   
-        </div>
+                <div id="greetingResult" class="greeting-result"></div>
+            </div>
+        </section>
+
+        <!-- Seicción de calculadora -->
+        <section class="section">
+            <h2>Módulo calculadora</h2>
+            <p>Operaciones matemáticas (suma, resta, multiplicación, división)</p>
+            <div class="interactive-example">
+                <div class="form-group">
+                    <label for="num1">Primer número</label>
+                    <input type="number" id="num1" placeholder="0">
+                </div>
+                <div class="form-group">
+                    <label for="operation">Operación</label>
+                    <select id="operation" name="">
+                        <option value="suma">Suma</option>
+                        <option value="resta">Resta</option>
+                        <option value="multiplicacion">Multiplicación</option>
+                        <option value="division">División</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="num2">Segundo número</label>
+                    <input type="number" id="num2" placeholder="0">
+                </div>
+                <button class="btn" id="calculateBtn">Calcular</button>
+                <div id="calculatorResult"></div>
+            </div>
+        </section>
     </div>
+
+    <!-- Sección de instrucciones -->
+    <footer class="footer">
+        <section class="instructions">
+            <h2>Cómo usar esta página</h2>
+            <ol>
+                <li><strong>Ingresa tu nombre:</strong> Escribe tu nombre completo en el campo de texto "Ingresar nombre"</li>
+                <li><strong>Haz clic en el botón:</strong> Presiona el botón "Saludar" para generar un saludo personalizado</li>
+                <li><strong>Recibe el saludo:</strong> La página te mostrará un saludo según la hora del día:
+                    <ul>
+                        <li>Mañana (00:00 - 11:59): "¡Buenos días!"</li>
+                        <li>Tarde (12:00 - 17:59): "¡Buenas tardes!"</li>
+                        <li>Noche (18:00 - 23:59): "¡Buenas noches!"</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+
+        <section class="info">
+            <h2>¿Qué aprendiste?</h2>
+            <p>Este mini-proyecto demuestra conceptos fundamentales de desarrollo web:</p>
+            <ul>
+                <li><strong>HTML:</strong> Estructura de formularios y botones</li>
+                <li><strong>CSS:</strong> Estilos y diseño responsivo</li>
+                <li><strong>JavaScript:</strong> Interactividad, validación y manejo de eventos</li>
+            </ul>
+        </section>
+    </footer>
     <script src="./JS/script.js"></script>
 </body>
 </html>

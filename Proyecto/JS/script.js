@@ -17,7 +17,7 @@
  */
 document.addEventListener('DOMContentLoaded', function() {
     // Aquí irían las inicializaciones principales del programa
-    // Por ahora está vacío, listo para que se añadan más funcionalidades
+    inicializarSaludo(); // Llamar a la función para inicializar el saludo
 })
 
 /**
@@ -217,37 +217,76 @@ function inicializarSaludo() {
                 }
 
 
-                greetingResult.innerHTML = 
-                    <div class="fade-in">
-                        <h3></h3>
-                    </div>
-                 
-                
                 /**
                  * MOSTRAR EL SALUDO EN LA PÁGINA
                  * ==============================
                  * 
-                 * greetingResult.textContent = Asigna el texto al elemento
+                 * greetingResult.innerHTML = Asigna el HTML al elemento
                  * 
-                 * .textContent = Propiedad que cambia el CONTENIDO DE TEXTO
-                 *                de cualquier elemento HTML
+                 * .innerHTML = Propiedad que cambia el CONTENIDO HTML
+                 *               de cualquier elemento HTML
                  * 
-                 * EJEMPLO: Si greetingResult es <div id="greetingResult"></div>
-                 *          Después del textContent será:
-                 *          <div id="greetingResult">¡Buenos días, Juan!</div>
-                 * 
-                 * DIFERENCIA:
-                 * - textContent: Solo texto plano
-                 * - innerHTML: Texto con código HTML (más peligroso)
-                 * 
-                 * Usamos textContent por SEGURIDAD.
+                 * Usamos innerHTML para incluir etiquetas HTML como <div>, <h3>, etc.
                  */
                 if (greetingResult) {
-                    greetingResult.textContent = greeting;
+                    greetingResult.innerHTML = `
+                        <div class="fade-in">
+                            <h3>${greeting}, ${name}!</h3>
+                            <p>¡Bienvenidos al curso de programación!</p>
+                        </div>
+                    `;
                     // El saludo personalizado aparece en la pantalla
+                }
+            } else {
+                // Si el nombre está vacío, mostrar mensaje de error
+                if (greetingResult) {
+                    greetingResult.innerHTML = '<p style="color: red;">Por favor, ingresa tu nombre.</p>';
                 }
             }
         });
+    }
+
+    function inicializarCalculadora(){
+        let calculadoraBtn = document.getElementById('calculateBtn');
+        let calculatorResult = document.getElementById('calculatorResult');
+
+        if(calculateBtn){
+            calculateBtn.addEventListener('click', function(){
+                let num1 = parseFloat(document.getElementById('num1').value);
+                let num2 = parseFloat(document.getElementById('num2').value);
+
+                if (isNaN(num1) || isNaN(num2)) {
+                    calculatorResult.innerHTML = '<p style="color: red;">Por favor, ingresa números válidos.</p>';
+                    return;
+                }
+
+                let result
+                let operation = document.getElementById('operation');
+                switch(operation.value){
+                    case 'add':
+                        result = num1 + num2;
+                        break;
+                    case 'subtract':
+                        result = num1 - num2;
+                        break;
+                    case 'multiply':
+                        result = num1 * num2;
+                        break;
+                    case 'divide':
+                        if (num2 === 0) {
+                            calculatorResult.innerHTML = '<p style="color: red;">Error: División por cero no permitida.</p>';
+                            return;
+                        }
+                        result = num1 / num2;
+                        break;
+                    default:
+                        calculatorResult.innerHTML = '<p style="color: red;">Operación no válida.</p>';
+                        return;
+                }
+
+                calculatorResult.innerHTML = `<p>El resultado es: ${result}</p>`;
+            });
+        }
     }
 }
 
