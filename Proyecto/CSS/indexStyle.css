@@ -1,9 +1,29 @@
+/*
+ * ====================================================
+ *  ESTILOS GLOBALES (RESET / BASE)
+ * ====================================================
+ *
+ * Este bloque actúa como una "cadena nacional" que reinicia
+ * márgenes y padding en todos los elementos, y asegura que el
+ * modelo de caja sea predecible (border-box).
+ *
+ * ANALOGÍA: Es como limpiar una mesa antes de empezar a trabajar.
+ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/*
+ * ====================================================
+ *  ESTILO DEL CUERPO (BODY)
+ * ====================================================
+ *
+ * El <body> se comporta como el "marco" principal de la página.
+ * Aquí definimos la fuente, el color de fondo y cómo se ordenan
+ * los elementos hijos (columna flexible).
+ */
 body {
     display: flex;
     flex-direction: column;
@@ -11,9 +31,18 @@ body {
     background-color: #f0f0f0;
     line-height: 1.7;
     color: #333;
-    min-height: 100vh; /*vh es una unidad de medida relativa a la altura de la ventana gráfica del navegador. 100vh significa que el elemento ocupará el 100% de la altura de la ventana gráfica, lo que garantiza que el fondo cubra toda la pantalla incluso si el contenido es escaso. */
+    min-height: 100vh; /* vh es una unidad relativa a la altura de la ventana. 100vh asegura que el fondo cubra toda la pantalla. */
 }
 
+/*
+ * ====================================================
+ *  ENCABEZADO (HEADER)
+ * ====================================================
+ *
+ * El header es como la fachada de un edificio: debe ser claro,
+ * visible y tener buena presencia. Todo el contenido dentro
+ * está centrado para que se vea ordenado.
+ */
 header {
     background-color: #4CAF50;
     color: white;
@@ -21,6 +50,14 @@ header {
     text-align: center;
 }
 
+/*
+ * ====================================================
+ *  SECCIÓN PRINCIPAL (CARD)
+ * ====================================================
+ *
+ * Cada sección con clase .section se comporta como una "tarjeta"
+ * (card) con sombra y bordes suaves, que resalta su contenido.
+ */
 .section {
     background-color: white;
     margin: 20px auto;
@@ -32,23 +69,53 @@ header {
     border-left: solid 5px #4CAF50;
 }
 
+/* Efecto hover: parece que la tarjeta se acerca (zoom ligero). */
 .section:hover {
     transform: scale(1.02);
 }
 
+/*
+ * ====================================================
+ *  GRUPOS DE FORMULARIO
+ * ====================================================
+ *
+ * Cada grupo de formulario (.form_group) se organiza en columna
+ * para que etiqueta+input queden uno debajo del otro.
+ */
 .form_group {
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
 }
 
-#nameInput {
+/*
+ * ====================================================
+ *  INPUTS (TEXTOS Y NÚMEROS)
+ * ====================================================
+ *
+ * Todos los campos de entrada comparten un estilo similar para
+ * mantener consistencia visual y mejorar usabilidad.
+ */
+#nameInput,
+#num1,
+#num2 {
     padding: 10px;
     width: 100%;
     max-width: 300px;
     margin-top: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+}
+
+/*
+ * ====================================================
+ *  EFECTOS DE INTERACCIÓN: HOVER EN INPUT NOMBRE
+ * ====================================================
+ *
+ * El campo de nombre crece levemente cuando el usuario pasa el cursor,
+ * como si respondiera al tacto, dando feedback visual.
+ */
+#nameInput {
     transition: transform 0.3s ease;
 }
 
@@ -57,7 +124,14 @@ header {
     transition-duration: 0.3s;
 }
 
-/* estilo para lista desplegable de operación */
+/*
+ * ====================================================
+ *  SELECT DE OPERACIONES
+ * ====================================================
+ *
+ * La lista desplegable funciona como una caja de opciones.
+ * Usamos el mismo estilo que los inputs para mantener coherencia.
+ */
 #operation {
     padding: 10px;
     width: 100%;
@@ -70,17 +144,27 @@ header {
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
+/* Efecto hover/focus: el borde se pinta con el verde principal y hay un ligero zoom */
 #operation:hover,
 #operation:focus {
     transform: scale(1.02);
     border-color: #4CAF50;
 }
 
+/* Opciones internas del select (margen interno para legibilidad) */
 #operation option {
     padding: 5px;
 }
 
-.btn{
+/*
+ * ====================================================
+ *  BOTONES
+ * ====================================================
+ *
+ * Los botones tienen un estilo uniforme para que el usuario los
+ * identifique como elementos clicables.
+ */
+.btn {
     margin-top: 15px;
     padding: 10px 20px;
     background-color: #4CAF50;
@@ -91,34 +175,18 @@ header {
     transition: transform 0.3s ease;
 }
 
+/* Hover sobre el botón de saludo: se oscurece y se amplía ligeramente */
 #greetBtn:hover {
     background-color: #45a049;
     transform: scale(1.05);
     transition-duration: 0.3s;
 }
 
-#num1{
-    padding: 10px;
-    width: 100%;
-    max-width: 300px;
-    margin-top: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-#num2{
-    padding: 10px;
-    width: 100%;
-    max-width: 300px;
-    margin-top: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-/* ===================================================
-   ESTILOS DEL FOOTER
-   =================================================== */
-
+/*
+ * ====================================================
+ *  ESTILOS DEL FOOTER
+ * ====================================================
+ */
 .footer {
     background-color: #333;
     color: white;
@@ -127,43 +195,15 @@ header {
     border-top: 5px solid #4CAF50;
 }
 
-.instructions {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 25px;
-    margin-bottom: 30px;
-    border-radius: 8px;
-    border-left: 4px solid #4CAF50;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.instructions h2 {
-    color: #4CAF50;
-    margin-bottom: 15px;
-    font-size: 1.8em;
-}
-
-.instructions ol {
-    margin-left: 20px;
-    margin-top: 10px;
-}
-
-.instructions li {
-    margin-bottom: 15px;
-    line-height: 1.8;
-}
-
-.instructions ul {
-    margin-left: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.instructions li strong {
-    color: #4CAF50;
-}
-
+/*
+ * ====================================================
+ *  CAJAS DE INSTRUCCIONES / INFO
+ * ====================================================
+ *
+ * Se utilizan contenedores con un fondo semi-transparente y un
+ * borde lateral verde para llamar la atención sin ser intrusivos.
+ */
+.instructions,
 .info {
     background-color: rgba(255, 255, 255, 0.1);
     padding: 25px;
@@ -174,27 +214,36 @@ header {
     margin-right: auto;
 }
 
+.instructions h2,
 .info h2 {
     color: #4CAF50;
     margin-bottom: 15px;
     font-size: 1.8em;
 }
 
-.info p {
-    margin-bottom: 15px;
-}
-
+.instructions ol,
+.instructions ul,
 .info ul {
     margin-left: 20px;
     margin-top: 10px;
 }
 
-.info li {
-    margin-bottom: 10px;
+.instructions li {
+    margin-bottom: 15px;
+    line-height: 1.8;
 }
 
+.instructions li strong,
 .info strong {
     color: #4CAF50;
+}
+
+.info p {
+    margin-bottom: 15px;
+}
+
+.info li {
+    margin-bottom: 10px;
 }
 
 /* ===================================================

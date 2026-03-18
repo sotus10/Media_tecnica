@@ -246,23 +246,68 @@ function inicializarSaludo() {
         });
     }
 
+    /**
+     * =====================================================================
+     * FUNCIÓN: inicializarCalculadora()
+     * =====================================================================
+     *
+     * PROPÓSITO: Esta función actúa como el "cajero" de una calculadora básica:
+     *            1. Busca los elementos HTML necesarios (inputs, botón y resultado)
+     *            2. Espera el clic del usuario para "procesar" los datos
+     *            3. Convierte los valores ingresados en números
+     *            4. Valida que sean números válidos
+     *            5. Realiza la operación seleccionada (suma, resta, etc.)
+     *            6. Muestra el resultado en pantalla
+     *
+     * ANALOGÍA: Imagina que estás en una tienda donde el usuario trae dos productos
+     *            (num1 y num2), elige una acción (sumar, restar, etc.) y presiona un
+     *            botón para que el cajero (esta función) calcule el total.
+     */
     function inicializarCalculadora(){
+        // Elementos del HTML que necesitamos para la calculadora
         let calculadoraBtn = document.getElementById('calculateBtn');
         let calculatorResult = document.getElementById('calculatorResult');
 
-        if(calculateBtn){
-            calculateBtn.addEventListener('click', function(){
+        // Verificamos que el botón exista antes de adjuntar el evento
+        if (calculadoraBtn) {
+            calculadoraBtn.addEventListener('click', function(){
+                /**
+                 * LECTURA Y PARSEO DE LOS NÚMEROS
+                 * =================================
+                 *
+                 * parseFloat convierte un string a número decimal.
+                 * Es como tomar una cadena de texto ("12.5") y transformarla
+                 * en un número real que el motor matemático pueda usar.
+                 */
                 let num1 = parseFloat(document.getElementById('num1').value);
                 let num2 = parseFloat(document.getElementById('num2').value);
 
+                /**
+                 * VALIDACIÓN: ¿Ambos valores son números válidos?
+                 * ===============================================
+                 *
+                 * isNaN() es como un detector de "no número".
+                 * Si alguno de los valores no es un número válido (e.g., "abc"),
+                 * mostramos un error y detenemos la ejecución usando return.
+                 */
                 if (isNaN(num1) || isNaN(num2)) {
                     calculatorResult.innerHTML = '<p style="color: red;">Por favor, ingresa números válidos.</p>';
                     return;
                 }
 
-                let result
+                // Variable donde guardaremos el resultado final
+                let result;
+
+                /**
+                 * SELECCIÓN DE OPERACIÓN (switch)
+                 * ===============================
+                 *
+                 * Operaremos según la opción que el usuario haya seleccionado.
+                 * El switch actúa como un menú de opciones: dependiendo del valor,
+                 * ejecutamos un bloque diferente.
+                 */
                 let operation = document.getElementById('operation');
-                switch(operation.value){
+                switch (operation.value) {
                     case 'add':
                         result = num1 + num2;
                         break;
@@ -273,6 +318,14 @@ function inicializarSaludo() {
                         result = num1 * num2;
                         break;
                     case 'divide':
+                        /**
+                         * PREVENCIÓN DE DIVISIÓN POR CERO
+                         * ==============================
+                         *
+                         * Dividir por cero no está definido matemáticamente.
+                         * Aquí actuamos como un guardia que detiene la operación
+                         * y muestra un mensaje de error si el divisor es 0.
+                         */
                         if (num2 === 0) {
                             calculatorResult.innerHTML = '<p style="color: red;">Error: División por cero no permitida.</p>';
                             return;
@@ -280,10 +333,12 @@ function inicializarSaludo() {
                         result = num1 / num2;
                         break;
                     default:
+                        // Si llega aquí, significa que la operación no está en el menú
                         calculatorResult.innerHTML = '<p style="color: red;">Operación no válida.</p>';
                         return;
                 }
 
+                // Mostramos el resultado final en la pantalla
                 calculatorResult.innerHTML = `<p>El resultado es: ${result}</p>`;
             });
         }
