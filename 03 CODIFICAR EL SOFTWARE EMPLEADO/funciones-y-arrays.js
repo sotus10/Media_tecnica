@@ -31,7 +31,7 @@ console.log(estudianteP); // "Pedro"
 
 // 6. includes() -> chequeo de pertenencia
 //    Analogia: preguntar "¿Sofia está físicamente en la lista?"; devuelve verdadero o falso.
-let tieneSofia = arrayEstudiantes.includes("Sofialalamalparida");
+let tieneSofia = arrayEstudiantes.includes("Sofia");
 console.log(tieneSofia); // true
 
 // 7. forEach() -> ejecutar acción por cada elemento (efecto secundario)
