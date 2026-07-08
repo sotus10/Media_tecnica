@@ -1,0 +1,25 @@
+/* Estilos para la tabla completa */
+table {
+    /* Define la lista de fuentes que usará la tabla en orden de preferencia. */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* Elimina los espacios entre los bordes de las celdas para que se vean como una sola línea. */
+    border-collapse: collapse;
+    /* La tabla ocupará todo el ancho disponible de su contenedor. */
+    width: 100%;
+}
+
+/* Estilos que se aplican a todas las celdas de datos (td) y cabeceras (th) */
+td, th {
+    /* Bordes finos y grises para separar visualmente filas y columnas. */
+    border: 1px solid #dddddd;
+    /* Alinea el contenido dentro de la celda al lado izquierdo. */
+    text-align: left;
+    /* Añade espacio interno dentro de cada celda para mejorar la legibilidad. */
+    padding: 8px;
+}
+
+/* Selector que aplica un estilo de fondo a cada fila par de la tabla */
+tr:nth-child(even) {
+    /* Color de fondo rosa claro para alternar el color de filas y facilitar la lectura. */
+    background-color: #e49494;
+}
