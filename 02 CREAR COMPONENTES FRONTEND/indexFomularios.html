@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+</head>
+<body>
+    <h2>Formularios</h2>
+    <form action="" method="post">
+        <!-- Input type text -->
+        <h4>Datos personales</h4>
+        <label for="id-input-nombre">Nombre</label><br>
+        <input type="text" name="nombre" id="id-input-nombre">
+        <br>
+        <label for="id-input-apellido">Apellidos</label><br>
+        <input type="text" name="apellido" id="id-input-apellido">
+
+        <!-- INPUT RADIO BUTTON -->
+        <h4>Situación laboral</h4>
+        <label for="idEmpleado">Empleado</label>
+        <input type="radio" name="situacion-laboral" id="idEmpleado"><br>
+        <label for="idDesempleado">Desempleado</label>
+        <input type="radio" name="situacion-laboral" id="idDesempleado"><br>
+        <label for="idBusqueda">En búsqueda activa</label>
+        <input type="radio" name="situacion-laboral" id="idBusqueda">brrr brrr patapim
+
+        <!--Input checkbox -->
+        <h4>Tecnologias que manejas</h4>
+        <label for="idHTML">HTML</label>
+        <input type="checkbox" name="tecnologias" id="idHTML" value="1">
+        <label for="idCSS">CSS</label>
+        <input type="checkbox" name="tecnologias" id="idHTML" value="2">
+        <label for="idJS">JavaScript</label>
+        <input type="checkbox" name="tecnologias" id="idJS" value="3">
+
+        <!-- Textarea -->
+        <h4>Comentarios</h4>
+        <label for="idComentarios">Comentarios</label><br>
+        <textarea name="motivo" id="idComentarios" cols="50" rows="7"></textarea>
+
+        <!-- Input type submit -->
+        <input type="submit" value="Enviar"><br>
+        <hr>
+
+        <!--  Inicio de sesión -->
+        <h3>Login</h3>
+        <label for="idCorreo">Correo</label>
+        <input type="email" name="datos-login" id="idCorreo" placeholder="fulanoperez@ejemplo.com"><br>
+        <br>
+        <label for="idPassword">Contraseña</label>
+        <input type="password" name="datos-login" id="idPassword" placeholder="Contraseña"><br>
+        <br>
+        <input type="submit" value="Entrar en mi cuenta">
+    </form>
+
+    <!-- Otros tipos de inputs -->
+    <form action="">
+        <hr>
+        <!-- Input type color -->
+        <label for="idColor">Seleccionar color</label>
+        <input type="color" name="color" id="idColor"><br>
+
+        <!-- Input type date -->
+        <label for="idFecha">Ingresa fecha</label>
+        <input type="date" id="idfecha">
+
+        <!-- Input type time -->
+        <label for="idHora">Ingresa la hora</label>
+        <input type="time" name="hora" id="idHora">
+
+        <!-- Input type archivo -->
+        <label for="idArchivo"></label>
+        <input type="file" name="archivo" id="idArchivo"><br>
+
+        <!-- select paises -->
+        <label for="idPais">Seleccionar paises</label><br>
+        <selection name="paises" id="idPais">
+            <option value="Argentina">Argentina</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Colombia">Colombia</option>
+            <option value="España">España</option>
+        </selection>
+    </form>
+    <hr>
+
+    <!-- Tarea en clase -->
+    
+    <form action="">
+        <h1 text-alling>Formularios</h1>
+
+        <label for="idname">Nombre</label>
+        <br>
+        <input type="text" name="Nombre" id="idname" placeholder="San Pedro Apóstol">
+        <br>
+
+        <h4>Inicio sesion</h4>
+        <!--Correo-->
+        <div>
+            <label for="idCorreo">Correo</label>
+            <input type="email" name="Correo" id="idCorreo" placeholder="@gmail.com">
+        </div>
+        <!--Copntraseña-->
+        <div>
+            <label for="idContraseña">Contraseña</label>
+            <input type="password" name="Contraseña" id="idContraseña" placeholder="(Lo que sea)">
+        </div>
+        <!--Botones-->
+        <div>
+            <input type="submit" value="Iniciar sesion">
+            <input type="reset" value="Limpiar campos">
+            <br>
+        </div>
+        <!--Edady nacimiento-->
+        <div>
+            <h4>Edad y nacimiento</h4>
+            <label for="idEdad">Edad</label>
+            <input type="number" id="idEdad" placeholder="67">
+            <label for="idNacimiento">nacimiento</label>
+            <input type="date" name="nacimiento" id="idNacimiento" required>
+            <br>
+        </div>
+        <!--Numero de telefono-->
+        <div>
+            <H4>Numero de telefono</H4>
+            <label for="idCel">Numero telefonico</label>
+            <input type="tel" name="Numero telefonico" id="idCel" placeholder="+57 3123345678" required>
+            <br>
+        </div>
+        <!--Color favorito-->
+        <div>
+            <h4>Color favorito (totalmente necesario)</h4>  
+            <label for="idColor">Color favorito</label>
+            <input type="color" name="Color favorito" id="idColor" required>
+        </div>
+        <!--Foto del estudiante-->
+        <div>
+            <label for="idFotoEstudiante">Foto del estudiante</label>
+            <input type="file" name="datos-nuevo-estudiante" id="idFotosEstudiante"><br>
+            <br>
+        </div>
+        <!--Pagina personal-->
+        <div>
+            <label for="idPagina-web">Página web personal (opcional)</label>               
+            <input type="url" name="datos-nuevo-estudiante" id="idPagina-web" placeholder="mi-página-web.com"><br>
+            <br>
+        </div>
+        <!--Horario preferido-->
+        <div>
+            <label for="idHorarioPreferido">Horario preferido</label>
+            <select id="idHorarioPreferido" name="horario-preferido">
+            <option value="8:00-11:00">8:00-11:00</option>
+            <option value="11:00-14:00">11:00-14:00</option>
+            <option value="14:00-17:00">14:00-17:00</option>
+            <option value="17:00-20:00">17:00-20:00</option>
+        </select><br>
+        </div>
+        <!--Sexo-->
+        <div>
+            <h4>Sexo</h4>
+            <label for="idMasculino">Masculino</label>
+            <input type="radio" name="genero" id="idMasculino">
+            <label for="idFemenino">Femenino</label>
+            <input type="radio" name="genero" id="idFemenino"><br>
+        </div>
+        <!--Cursos de interes-->
+        <h4>Cursos de interés</h4>
+        <div>
+            <label for="idCursoFront">Front-end</label>
+            <input type="checkbox" id="idCursoFront" name="preferencias"><br>
+            <label for="idCursoBack">Back-end</label>
+            <input type="checkbox"  name="preferencias" id="idCursoBack"><br>
+            <label for="idCursoFull">Full-stack</label>
+            <input type="checkbox"  name="preferencias" id="idCursoFull"><br>
+            <label for="idCursoMovil">Desarrollo móvil</label>
+            <input type="checkbox" name="preferencias" id="idCursoMovil"><br>
+            <label for="idIA">Inteligencia Artificial</label>
+            <input type="checkbox" name="preferencias" id="idIA"><br>
+        </div><br>
+        <!--Ciudad-->
+        <div>  
+            <h4>Ciudad</h4>
+            <label for="idCiudad">Ciudad</label>
+            <input type="text" name="ciudad" id="idCiudad">
+        </div>
+        <!--Comentarios-->
+        <h4>Comentarios</h4>
+        <label for="idComentarios">Comentarios</label>
+        <textarea name="comentarios" id="idComentarios"></textarea>
+    </form>
+
+    <p></p>
+</body>
+</html>
